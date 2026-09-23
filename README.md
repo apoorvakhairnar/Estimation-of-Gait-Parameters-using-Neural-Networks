@@ -3,7 +3,9 @@
 This repository contains experiments for estimating gait timing parameters from dual-IMU data using recurrent neural networks (RNN/GRU).  
 It includes data collection firmware, model training/evaluation notebooks, and plotting notebooks.
 
-Project context: https://apoorvakhairnar.github.io/pages/projects/
+This project was conducted as part of the **Machine Learning for Mechanical Engineers** course at **Virginia Tech (Spring 2025)**.
+
+Project report can be found here: https://www.researchgate.net/
 
 ## Features
 
@@ -88,12 +90,14 @@ Libraries referenced by the sketch include:
 - `SparkFun_BNO080_Arduino_Library`
 - `SD`, `Wire`, and related sensor interfaces
 
+## Contributors
+
+Contributors are listed in alphabetical order (by last name):
+
+1. Apoorva Khairnar
+2. Prashant Kumar
+3. Aksh Rajput
+
 ## Contributing
 
-Contributions are welcome. A typical workflow:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make focused changes with clear notebook outputs
-4. Open a pull request describing the experiment and results
-
+This was a course project, so external contributions are not being accepted.
