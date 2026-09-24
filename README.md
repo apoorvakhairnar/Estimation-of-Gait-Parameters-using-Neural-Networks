@@ -5,7 +5,7 @@ It includes data collection firmware, model training/evaluation notebooks, and p
 
 This project was conducted as part of the **Machine Learning for Mechanical Engineers** course at **Virginia Tech (Spring 2025)**.
 
-Project report can be found here: https://www.researchgate.net/
+Project report can be found here: [https://www.researchgate.net/](https://www.researchgate.net/publication/409633770_Estimating_Gait_Parameters_for_Wearable_Robots_using_Machine_Learning_Techniques)
 
 ## Features
 
