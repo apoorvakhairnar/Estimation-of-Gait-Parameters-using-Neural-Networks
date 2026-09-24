@@ -92,10 +92,6 @@ directory). Core Python dependencies, based on the notebook imports:
 - `tensorflow` (Keras `GRU`, `SimpleRNN`, `Dense` layers)
 - `jupyter`
 
-> **TODO:** No `requirements.txt` or `environment.yml` is present in this
-> repo; the package list above is inferred from notebook imports, not pinned
-> versions.
-
 ## Getting Started
 
 ```bash
@@ -157,7 +153,3 @@ Contributors are listed in alphabetical order (by last name):
 
 This was a course project; external contributions are not being accepted.
 
-## License
-
-> **TODO:** No `LICENSE` file is present in this repository. Add one if you
-> intend to make usage terms explicit.
