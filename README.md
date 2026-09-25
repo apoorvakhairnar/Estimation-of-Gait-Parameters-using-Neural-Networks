@@ -25,19 +25,32 @@ Two recurrent architectures are compared:
 - A two-layer **SimpleRNN** model (baseline)
 - A two-layer **GRU** model
 
-Across held-out data spanning slow, medium, and fast walking speeds, the GRU
-model achieved a validation MAE of about **42 ms** (0.042, in the same units
-as `t_toeoff`) in the final evaluation notebook — reported by the project as
-roughly a **27% improvement** over the SimpleRNN baseline, with better
-generalization across walking speeds. Feature-selection and PCA experiments
-found that using all 20 raw sensor channels (rather than a reduced or
-PCA-projected feature set) gave the best performance.
+According to the project report, the GRU achieved a mean absolute error of
+around **42 ms** across slow, self-selected, and fast walking speeds, an
+average **27% improvement** over the SimpleRNN (abstract, p. 1). The GRU had
+a lower error than the RNN at every individual walking speed. When data from
+all three speeds was merged into one "universal" dataset, the RNN's error rose
+sharply while the GRU's stayed near its per-speed average, so the authors
+concluded that the "RNN cannot be used for developing a generalized model"
+(Section 6, p. 4). The per-model RNN and GRU values are shown in the report's
+Figures 6–8.
 
-> **TODO:** Confirm the exact RNN-vs-GRU MAE values and the "27% improvement"
-> figure against the numbers reported in the linked project report — the
-> notebooks in this repo record a final GRU validation MAE of ~0.042, but the
-> RNN baseline comparison lives in `InitialTrainingRNNGRU.ipynb`'s plots
-> rather than as a single printed number.
+The final, generalized GRU model (best hyperparameters: hidden layer sizes
+128/64/32, Adam, learning rate 1e-3) reached a test-set MAE of **0.0420**
+(≈ 42 ms, matching the abstract) and a test loss (MSE) of **0.01233** on the
+universal/combined-speed dataset (Section 7 — Conclusion, p. 7). Under
+k-fold cross-validation on that same universal dataset, GRU validation MAE
+was 0.0346 with no folding, 0.0871 ± 0.0069 with 5-fold CV, and
+0.0439 ± 0.0043 with 10-fold CV (Section 6.2, p. 5) — the report notes this
+degradation is likely because random k-fold splitting breaks the data's
+temporal ordering.
+
+Feature-selection and PCA experiments — testing reduced thigh-only/
+quaternion-only feature subsets and PCA with 5, 10, and 15 components —
+both increased GRU's validation loss and MAE on the universal dataset
+relative to using all 20 raw sensor channels; the report's conclusion states
+"the results indicated that the original 20 features be retained" (Sections
+6.1 and 7, pp. 4–6).
 
 ## Repository Structure
 
@@ -152,4 +165,3 @@ Contributors are listed in alphabetical order (by last name):
 ## Contributing
 
 This was a course project; external contributions are not being accepted.
-
